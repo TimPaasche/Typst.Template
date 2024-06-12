@@ -62,12 +62,15 @@
   This is a figure caption
 ])
 <fig:my_figure>
+#pagebreak()
 
 = concept <chap:concept>
 #lorem(100)
+#pagebreak()
 
 = implementation <chap:implementation>
-
+#lorem(40)
+#v(1cm)
 #figure(
   ```python
   # This is some Python code
@@ -75,12 +78,29 @@
   ```,
   caption: "python Code"
 )
+#pagebreak()
 
+= result
+<chap:result>
+#lorem(100)
+#figure(
+  table(
+    columns: 3,
+    table.header(
+      [*A*],[*B*],[*C*]
+    ),
+    //1. row
+    [1],[2],[3],
+    //2. row
+    [4],[5],[6],
+  ),
+  caption: "This is a table caption"
+)
+#pagebreak()
 
-
-= result <chap:result>
-
-= possible usecases <chap:possible_extensions_usecases>
+= possible usecases
+<chap:possible_extensions_usecases>
+#lorem(100)
 
 #pagebreak()
 
@@ -96,4 +116,10 @@
 #outline(
   title: [Tabellenverzeichnis],
   target: figure.where(kind: table),
+)
+#pagebreak()
+
+#outline(
+  title: [Sourcecodeverzeichnis],
+  target: figure.where(kind: raw),
 )

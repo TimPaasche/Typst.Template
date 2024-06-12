@@ -203,6 +203,11 @@
       kind: raw
     ): set figure(supplement: "Sourcecode")
 
+    show figure.where(
+      kind: table
+    ): set figure.caption(position: top)
+
+
     set page(
       header: setHeader(title: title, subtitle: subtitle, authors: authors),
       footer: setFooter(title: title, subtitle: subtitle, authors: authors)
